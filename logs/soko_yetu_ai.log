@@ -1,2 +1,202 @@
 2025-05-04 10:47:38,993 - soko_yetu_ai - ERROR - Failed to load image data: [WinError 3] The system cannot find the path specified: 'data/processed/plantvillage\\train'
 2025-05-04 10:48:17,278 - soko_yetu_ai - ERROR - Failed to load image data: [WinError 3] The system cannot find the path specified: 'data/processed/plantvillage\\train'
+2025-05-09 19:21:55,811 - soko_yetu_ai - ERROR - Database URL not configured. Please set the DATABASE_URL environment variable or pass a db_url argument to DataPreprocessor.
+2025-05-09 20:02:51,190 - soko_yetu_ai - INFO - Successfully loaded environment variables from: C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\.env
+2025-05-09 20:02:51,196 - soko_yetu_ai - INFO - Attempting to connect to database with URL: sqlite:///sokoyetu_ai.db
+2025-05-09 20:02:52,363 - soko_yetu_ai - INFO - Price data preprocessed and saved to data/processed/price_data.csv
+2025-05-09 20:02:52,741 - soko_yetu_ai - INFO - Price data saved to database
+2025-05-09 20:02:52,970 - soko_yetu_ai - INFO - Yield data preprocessed and saved to data/processed/yield_data.csv
+2025-05-09 20:02:53,137 - soko_yetu_ai - ERROR - Yield data preprocessing failed: (sqlite3.OperationalError) duplicate column name: year
+[SQL: 
+CREATE TABLE processed_yield_data (
+	"Domain Code" TEXT, 
+	"Domain" TEXT, 
+	"Area Code (M49)" BIGINT, 
+	"Area" TEXT, 
+	"Element Code" BIGINT, 
+	"Element" TEXT, 
+	"Item Code (CPC)" FLOAT, 
+	"Item" TEXT, 
+	"Year Code" BIGINT, 
+	"Year" BIGINT, 
+	"Unit" TEXT, 
+	"Value" FLOAT, 
+	"Flag" TEXT, 
+	"Flag Description" TEXT, 
+	"Note" FLOAT, 
+	date DATETIME, 
+	yield_3yr_avg FLOAT, 
+	yield_5yr_avg FLOAT, 
+	month INTEGER, 
+	year INTEGER
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: duplicate column name: year
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\scripts\preprocess_data.py", line 142, in preprocess_yield_data
+    df.to_sql('processed_yield_data', self.engine, if_exists='replace', index=False)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+            ^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\sql.py", line 1912, in prep_table
+    table.create()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\sql.py", line 995, in create
+    self._execute_create()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\sql.py", line 981, in _execute_create
+    self.table.create(bind=self.pd_sql.con)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\schema.py", line 1289, in create
+    bind._run_ddl_visitor(ddl.SchemaGenerator, self, checkfirst=checkfirst)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2456, in _run_ddl_visitor
+    visitorcallable(self.dialect, self, **kwargs).traverse_single(element)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\visitors.py", line 664, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\ddl.py", line 1019, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\ddl.py", line 321, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\sql\ddl.py", line 187, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1527, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) duplicate column name: year
+[SQL: 
+CREATE TABLE processed_yield_data (
+	"Domain Code" TEXT, 
+	"Domain" TEXT, 
+	"Area Code (M49)" BIGINT, 
+	"Area" TEXT, 
+	"Element Code" BIGINT, 
+	"Element" TEXT, 
+	"Item Code (CPC)" FLOAT, 
+	"Item" TEXT, 
+	"Year Code" BIGINT, 
+	"Year" BIGINT, 
+	"Unit" TEXT, 
+	"Value" FLOAT, 
+	"Flag" TEXT, 
+	"Flag Description" TEXT, 
+	"Note" FLOAT, 
+	date DATETIME, 
+	yield_3yr_avg FLOAT, 
+	yield_5yr_avg FLOAT, 
+	month INTEGER, 
+	year INTEGER
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-05-09 20:11:29,717 - soko_yetu_ai - INFO - Successfully loaded environment variables from: C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\.env
+2025-05-09 20:11:29,723 - soko_yetu_ai - INFO - Attempting to connect to database with URL: sqlite:///sokoyetu_ai.db
+2025-05-09 20:11:29,886 - soko_yetu_ai - INFO - Price data preprocessed and saved to data/processed/price_data.csv
+2025-05-09 20:11:29,984 - soko_yetu_ai - INFO - Price data saved to database
+2025-05-09 20:11:30,032 - soko_yetu_ai - INFO - Yield data preprocessed and saved to data/processed/yield_data.csv
+2025-05-09 20:11:30,115 - soko_yetu_ai - INFO - Yield data saved to database
+2025-05-09 20:11:36,760 - soko_yetu_ai - INFO - Image data preprocessed for crop and saved to data/processed/plantvillage
+2025-05-09 20:11:36,862 - soko_yetu_ai - INFO - crop image metadata saved to database
+2025-05-09 20:11:36,868 - soko_yetu_ai - ERROR - Image data preprocessing failed: [WinError 3] The system cannot find the path specified: 'data/raw/produce_grading'
+Traceback (most recent call last):
+  File "C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\scripts\preprocess_data.py", line 157, in preprocess_image_data
+    class_dirs = [d for d in os.listdir(raw_dir) if os.path.isdir(os.path.join(raw_dir, d))]
+                             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/raw/produce_grading'
+2025-05-09 21:05:10,292 - soko_yetu_ai - INFO - Successfully loaded environment variables from: C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\.env
+2025-05-09 21:05:10,307 - soko_yetu_ai - INFO - Attempting to connect to database with URL: sqlite:///sokoyetu_ai.db
+2025-05-09 21:05:10,809 - soko_yetu_ai - INFO - Price data preprocessed and saved to data/processed/price_data.csv
+2025-05-09 21:05:10,927 - soko_yetu_ai - INFO - Price data saved to database
+2025-05-09 21:05:11,005 - soko_yetu_ai - INFO - Yield data preprocessed and saved to data/processed/yield_data.csv
+2025-05-09 21:05:11,103 - soko_yetu_ai - INFO - Yield data saved to database
+2025-05-09 21:05:11,106 - soko_yetu_ai - ERROR - Image preprocessing failed: 'DataPreprocessor' object has no attribute '_validate_directory'
+Traceback (most recent call last):
+  File "C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\scripts\preprocess_data.py", line 156, in preprocess_image_data
+    self._validate_directory(raw_dir)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataPreprocessor' object has no attribute '_validate_directory'
+2025-05-09 21:07:12,632 - soko_yetu_ai - INFO - Successfully loaded environment variables from: C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\.env
+2025-05-09 21:07:12,635 - soko_yetu_ai - INFO - Attempting to connect to database with URL: sqlite:///sokoyetu_ai.db
+2025-05-09 21:07:12,869 - soko_yetu_ai - INFO - Price data preprocessed and saved to data/processed/price_data.csv
+2025-05-09 21:07:13,151 - soko_yetu_ai - INFO - Price data saved to database
+2025-05-09 21:07:13,267 - soko_yetu_ai - INFO - Yield data preprocessed and saved to data/processed/yield_data.csv
+2025-05-09 21:07:13,421 - soko_yetu_ai - INFO - Yield data saved to database
+2025-05-09 21:07:18,924 - soko_yetu_ai - INFO - Image data preprocessed for crop and saved to data/processed/plantvillage
+2025-05-09 21:07:19,001 - soko_yetu_ai - INFO - crop image metadata saved to database
+2025-05-09 21:07:19,003 - soko_yetu_ai - ERROR - Image data preprocessing failed: [WinError 3] The system cannot find the path specified: 'data/raw/produce_grading'
+Traceback (most recent call last):
+  File "C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\scripts\preprocess_data.py", line 157, in preprocess_image_data
+    class_dirs = [d for d in os.listdir(raw_dir) if os.path.isdir(os.path.join(raw_dir, d))]
+                             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/raw/produce_grading'
+2025-05-09 23:18:07,280 - soko_yetu_ai - INFO - Loaded 33027 training images
+2025-05-09 23:18:07,291 - soko_yetu_ai - INFO - Loaded 8249 validation images
+2025-05-09 23:18:07,292 - soko_yetu_ai - INFO - Loaded 41276 test images
+2025-05-09 23:21:17,931 - soko_yetu_ai - INFO - Loaded 33027 training images
+2025-05-09 23:21:17,933 - soko_yetu_ai - INFO - Loaded 8249 validation images
+2025-05-09 23:21:17,934 - soko_yetu_ai - INFO - Loaded 41276 test images
+2025-05-09 23:21:22,137 - urllib3.connectionpool - WARNING - Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDDD00B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:21:30,937 - urllib3.connectionpool - WARNING - Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDDD38F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:21:43,386 - urllib3.connectionpool - WARNING - Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDDD39E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:22:03,808 - urllib3.connectionpool - WARNING - Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDDD3920>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:22:40,352 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDDD3410>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:23:48,999 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=1, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDDD36B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:25:53,153 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=0, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDDD3740>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:26:01,485 - urllib3.connectionpool - WARNING - Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDD964E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:26:10,007 - urllib3.connectionpool - WARNING - Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDD96750>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:26:23,012 - urllib3.connectionpool - WARNING - Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDD968D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:26:43,326 - urllib3.connectionpool - WARNING - Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDD96AB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:27:19,777 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDD96CF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:28:28,805 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=1, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDD96EA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:30:32,851 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=0, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021DCDB4FAA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:36:40,722 - soko_yetu_ai - INFO - Loaded 33027 training images
+2025-05-09 23:36:40,725 - soko_yetu_ai - INFO - Loaded 8249 validation images
+2025-05-09 23:36:40,728 - soko_yetu_ai - INFO - Loaded 41276 test images
+2025-05-09 23:36:44,951 - urllib3.connectionpool - WARNING - Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B084FF7A40>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:36:53,935 - urllib3.connectionpool - WARNING - Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085562F90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:37:06,907 - urllib3.connectionpool - WARNING - Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085563E30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:37:27,720 - urllib3.connectionpool - WARNING - Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085563EC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:38:04,400 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085563080>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:39:12,727 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=1, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085562A80>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:41:16,785 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=0, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085563FB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/create
+2025-05-09 23:41:24,904 - urllib3.connectionpool - WARNING - Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085526000>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:41:33,301 - urllib3.connectionpool - WARNING - Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085526150>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:41:46,215 - urllib3.connectionpool - WARNING - Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085526420>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:42:06,436 - urllib3.connectionpool - WARNING - Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085526570>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:42:42,930 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B085526780>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:43:51,585 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=1, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B0855269C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai
+2025-05-09 23:45:55,643 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=0, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B0854E0EC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=soko_yetu_ai

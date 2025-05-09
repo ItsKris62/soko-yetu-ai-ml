@@ -1,15 +1,25 @@
 import argparse
+import sys # Required for sys.path manipulation
+from pathlib import Path # For robust path manipulation
+
+import os
+
+# Add the project root directory to sys.path
+# This allows Python to find the 'app' module
+project_root_dir = Path(__file__).resolve().parent.parent
+if str(project_root_dir) not in sys.path: # Avoids adding duplicates
+    sys.path.insert(0, str(project_root_dir))
+
 from app.models.crop_analyzer import CropAnalyzer
 from app.utils.image_loader import PlantVillageLoader
 from app.utils.logger import setup_logging
-import os
 
 def train_model(data_dir="data/raw/plantvillage", model_save_path="models/crop_analyzer.h5", epochs=30):
     """Train the crop analysis model"""
     try:
         # Load data
         loader = PlantVillageLoader(data_dir)
-        train_gen, val_gen = loader.get_data_generators()
+        train_gen, val_gen, test_gen = loader.get_data_generators()
         
         # Train model
         model = CropAnalyzer()

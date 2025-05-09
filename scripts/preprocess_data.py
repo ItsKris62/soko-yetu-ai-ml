@@ -1,3 +1,6 @@
+import sys
+from pathlib import Path # For robust path manipulation
+
 import pandas as pd
 import numpy as np
 from datetime import datetime
@@ -5,12 +8,50 @@ import os
 from sqlalchemy import create_engine
 from PIL import Image
 import cv2
-from app.utils.logger import logger
+
+
+from dotenv import load_dotenv
+
+
+# Add the project root directory to sys.path
+# This allows Python to find the 'app' module
+project_root_dir = Path(__file__).resolve().parent.parent
+if str(project_root_dir) not in sys.path: # Avoids adding duplicates
+    sys.path.insert(0, str(project_root_dir))
+
+# Load environment variables from .env file in the project root
+# This should be done before trying to access os.getenv("DATABASE_URL")
+dotenv_path = project_root_dir / ".env"
+if dotenv_path.exists():
+    load_dotenv(dotenv_path)
+  # Loger.info
+
+from app.utils.logger import logger, setup_logging
 from app.utils.image_loader import PlantVillageLoader
+
+
+# Call setup_logging() to configure the logger as defined in app/utils/logger.py
+# Do this early, so all subsequent log messages use the intended configuration.
+setup_logging()
+
+# Log after logger is set up
+if dotenv_path.exists():
+    logger.info(f"Successfully loaded environment variables from: {dotenv_path}")
+
 
 class DataPreprocessor:
     def __init__(self, db_url=None):
         self.db_url = db_url or os.getenv("DATABASE_URL")
+        if not self.db_url:
+            error_message = (
+                "Database URL not configured. "
+                "Please set the DATABASE_URL environment variable "
+                "or pass a db_url argument to DataPreprocessor."
+            )
+            logger.error(error_message)
+            raise ValueError(error_message)
+        
+        logger.info(f"Attempting to connect to database with URL: {self.db_url}")
         self.engine = create_engine(self.db_url)
 
     def preprocess_price_data(self, raw_path, output_path):
@@ -85,6 +126,8 @@ class DataPreprocessor:
             df = df.dropna(subset=['Value', 'Year'])
             df['date'] = pd.to_datetime(df['Year'], format='%Y')
             df = df.sort_values('date')
+            df = df.rename(columns={'Year': 'original_year'}) # Rename the original 'Year' column
+            
             
             # Add rolling features
             df['yield_3yr_avg'] = df['Value'].rolling(window=3).mean()

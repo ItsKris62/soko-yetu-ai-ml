@@ -1,0 +1,69 @@
+Domain Code,Domain,Area Code (M49),Area,Element Code,Element,Item Code (CPC),Item,Year Code,original_year,Unit,Value,Flag,Flag Description,Note,date,yield_3yr_avg,yield_5yr_avg,month,year
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1311.0,Avocados,2022,2022,kg/ha,17203.6,A,Official figure,,2022-01-01,,,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1253.02,"Onions and shallots, dry (excluding dehydrated)",2022,2022,kg/ha,14869.1,A,Official figure,,2022-01-01,,,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1253.02,"Onions and shallots, dry (excluding dehydrated)",2022,2022,t,158400.0,A,Official figure,,2022-01-01,63490.9,,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1318.0,Pineapples,2022,2022,kg/ha,29288.4,A,Official figure,,2022-01-01,67519.16666666667,,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1510.0,Potatoes,2022,2022,kg/ha,7911.9,A,Official figure,,2022-01-01,65200.1,45534.6,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1510.0,Potatoes,2022,2022,t,1831809.0,A,Official figure,,2022-01-01,623003.1,408455.68,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,113.0,Rice,2022,2022,kg/ha,4345.2,A,Official figure,,2022-01-01,614688.7000000001,406350.89999999997,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,113.0,Rice,2022,2022,t,192299.0,A,Official figure,,2022-01-01,676151.0666666667,413130.69999999995,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1215.0,Spinach,2022,2022,kg/ha,13508.0,A,Official figure,,2022-01-01,70050.73333333334,409974.62,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1215.0,Spinach,2022,2022,t,157368.0,A,Official figure,,2022-01-01,121058.33333333333,439865.84,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1530.0,Sweet potatoes,2022,2022,kg/ha,12239.5,A,Official figure,,2022-01-01,61038.5,75951.94,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1530.0,Sweet potatoes,2022,2022,t,597900.0,A,Official figure,,2022-01-01,255835.83333333334,194662.9,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1620.0,Tea leaves,2022,2022,kg/ha,10709.5,A,Official figure,,2022-01-01,206949.66666666666,158345.0,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1620.0,Tea leaves,2022,2022,t,2418200.0,A,Official figure,,2022-01-01,1008936.5,639283.4,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1234.0,Tomatoes,2022,2022,kg/ha,21764.1,A,Official figure,,2022-01-01,816891.2000000001,612162.62,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1234.0,Tomatoes,2022,2022,t,616600.0,A,Official figure,,2022-01-01,1018854.7000000001,733034.72,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,111.0,Wheat,2022,2022,kg/ha,3083.9,A,Official figure,,2022-01-01,213816.0,614071.5,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,111.0,Wheat,2022,2022,t,368696.0,A,Official figure,,2022-01-01,329459.9666666667,685668.8,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1540.0,Yams,2022,2022,kg/ha,7978.7,A,Official figure,,2022-01-01,126586.20000000001,203624.53999999998,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1540.0,Yams,2022,2022,t,6000.0,A,Official figure,,2022-01-01,127558.23333333334,200471.72,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,112.0,Maize (corn),2022,2022,t,3082220.0,A,Official figure,,2022-01-01,1032066.2333333334,693595.72,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,112.0,Maize (corn),2022,2022,kg/ha,1458.3,A,Official figure,,2022-01-01,1029892.7666666666,693270.6,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1318.0,Pineapples,2022,2022,t,252700.0,A,Official figure,,2022-01-01,1112126.0999999999,670071.4,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1312.0,Bananas,2022,2022,t,2052600.0,A,Official figure,,2022-01-01,768919.4333333332,1078995.66,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1657.0,"Ginger, raw",2022,2022,t,916.4,A,Official figure,,2022-01-01,768738.8000000002,1077978.94,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1657.0,"Ginger, raw",2022,2022,kg/ha,12096.1,A,Official figure,,2022-01-01,688537.5,463954.16,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1311.0,Avocados,2022,2022,t,441600.0,A,Official figure,,2022-01-01,151537.5,551982.5,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1212.0,Cabbages,2022,2022,kg/ha,39660.8,A,Official figure,,2022-01-01,164452.3,509374.66000000003,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1701.0,"Beans, dry",2022,2022,kg/ha,591.3,A,Official figure,,2022-01-01,160617.36666666667,98972.92,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1312.0,Bananas,2022,2022,kg/ha,28587.7,A,Official figure,,2022-01-01,22946.600000000002,104507.18,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1460.0,"Coconuts, in shell",2022,2022,t,71722.0,A,Official figure,,2022-01-01,33633.666666666664,116432.36000000002,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1212.0,Cabbages,2022,2022,t,1382100.0,A,Official figure,,2022-01-01,494136.56666666665,304532.36,1,2022
+QCL,Crops and livestock products,404,Kenya,5510,Production,1701.0,"Beans, dry",2022,2022,t,750120.0,A,Official figure,,2022-01-01,734647.3333333334,446624.2,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1460.0,"Coconuts, in shell",2022,2022,kg/ha,992.2,A,Official figure,,2022-01-01,711070.7333333334,446704.38000000006,1,2022
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1530.0,Sweet potatoes,2023,2023,kg/ha,12294.4,A,Official figure,,2023-01-01,254468.86666666667,443445.72000000003,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1530.0,Sweet potatoes,2023,2023,t,669100.0,A,Official figure,,2023-01-01,227462.19999999998,562921.3200000001,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1312.0,Bananas,2023,2023,t,2906900.0,A,Official figure,,2023-01-01,1196098.1333333333,867881.32,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1620.0,Tea leaves,2023,2023,kg/ha,11316.1,A,Official figure,,2023-01-01,1195772.0333333334,720120.54,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1657.0,"Ginger, raw",2023,2023,t,740.36,I,Imputed value,,2023-01-01,972985.4866666667,720070.172,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1312.0,Bananas,2023,2023,kg/ha,36682.0,A,Official figure,,2023-01-01,16246.153333333334,724947.692,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1234.0,Tomatoes,2023,2023,kg/ha,18746.8,A,Official figure,,2023-01-01,18723.053333333333,594877.0519999999,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1234.0,Tomatoes,2023,2023,t,582500.0,A,Official figure,,2023-01-01,212642.93333333335,129997.052,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1311.0,Avocados,2023,2023,t,542277.78,I,Imputed value,,2023-01-01,381174.86000000004,236189.38799999998,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,111.0,Wheat,2023,2023,kg/ha,2963.3,A,Official figure,,2023-01-01,375913.69333333336,236633.97599999997,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,111.0,Wheat,2023,2023,t,309492.0,A,Official figure,,2023-01-01,284911.0266666667,291195.97599999997,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1311.0,Avocados,2023,2023,kg/ha,16222.3,E,Estimated value,,2023-01-01,109559.2,290691.076,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1620.0,Tea leaves,2023,2023,t,2577800.0,A,Official figure,,2023-01-01,967838.1,689751.076,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1701.0,"Beans, dry",2023,2023,kg/ha,705.7,A,Official figure,,2023-01-01,864909.3333333334,581436.6599999999,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1701.0,"Beans, dry",2023,2023,t,860973.0,A,Official figure,,2023-01-01,1146492.9000000001,753038.6,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1215.0,Spinach,2023,2023,kg/ha,14200.6,E,Estimated value,,2023-01-01,291959.76666666666,693980.32,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,112.0,Maize (corn),2023,2023,kg/ha,1763.4,A,Official figure,,2023-01-01,292312.3333333333,691088.54,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,112.0,Maize (corn),2023,2023,t,4285206.0,A,Official figure,,2023-01-01,1433723.3333333333,1032569.74,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1460.0,"Coconuts, in shell",2023,2023,t,81667.0,A,Official figure,,2023-01-01,1456212.1333333335,1048762.0,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1460.0,"Coconuts, in shell",2023,2023,kg/ha,1103.7,A,Official figure,,2023-01-01,1455992.2333333334,876788.14,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1253.02,"Onions and shallots, dry (excluding dehydrated)",2023,2023,kg/ha,14752.2,A,Official figure,,2023-01-01,32507.63333333333,876898.4600000002,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1253.02,"Onions and shallots, dry (excluding dehydrated)",2023,2023,t,163100.0,A,Official figure,,2023-01-01,59651.96666666667,909165.78,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1540.0,Yams,2023,2023,kg/ha,8184.5,E,Estimated value,,2023-01-01,62012.23333333333,53761.48,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1215.0,Spinach,2023,2023,t,158715.98,I,Imputed value,,2023-01-01,110000.15999999999,69171.276,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1318.0,Pineapples,2023,2023,kg/ha,20697.0,A,Official figure,,2023-01-01,62532.49333333334,73089.936,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1212.0,Cabbages,2023,2023,t,1042800.0,A,Official figure,,2023-01-01,407404.32666666666,278699.496,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1510.0,Potatoes,2023,2023,kg/ha,9651.8,A,Official figure,,2023-01-01,357716.26666666666,248009.856,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1510.0,Potatoes,2023,2023,t,2309913.0,A,Official figure,,2023-01-01,1120788.2666666666,708355.5560000001,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1212.0,Cabbages,2023,2023,kg/ha,32822.4,A,Official figure,,2023-01-01,784129.0666666665,683176.8400000001,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,113.0,Rice,2023,2023,kg/ha,5882.6,A,Official figure,,2023-01-01,782872.6666666666,680213.9600000001,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,113.0,Rice,2023,2023,t,229064.0,A,Official figure,,2023-01-01,89256.33333333333,517466.76000000007,1,2023
+QCL,Crops and livestock products,404,Kenya,5412,Yield,1657.0,"Ginger, raw",2023,2023,kg/ha,12256.3,E,Estimated value,,2023-01-01,82400.96666666666,517987.66000000003,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1318.0,Pineapples,2023,2023,t,97400.0,A,Official figure,,2023-01-01,112906.76666666666,75485.06000000008,1,2023
+QCL,Crops and livestock products,404,Kenya,5510,Production,1540.0,Yams,2023,2023,t,5544.1,I,Imputed value,,2023-01-01,38400.13333333334,70029.4000000001,1,2023

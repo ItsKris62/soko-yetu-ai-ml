@@ -1,7 +1,16 @@
 import argparse
 import pandas as pd
 import os
+import sys # Required for sys.path manipulation
+from pathlib import Path # For robust path manipulation
 from sqlalchemy import create_engine
+
+# Add the project root directory to sys.path
+# This allows Python to find the 'app' module
+project_root_dir = Path(__file__).resolve().parent.parent
+if str(project_root_dir) not in sys.path: # Avoids adding duplicates
+    sys.path.insert(0, str(project_root_dir))
+
 from app.models.yield_forecaster import YieldForecaster
 from app.utils.logger import setup_logging
 from app.utils.mlflow_tracker import MLflowTracker

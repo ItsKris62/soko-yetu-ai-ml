@@ -235,3 +235,134 @@ FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data
 2025-05-12 15:58:48,838 - soko_yetu_ai - INFO - Loaded 0 training images
 2025-05-12 15:58:48,842 - soko_yetu_ai - INFO - Loaded 0 validation images
 2025-05-12 15:58:48,843 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-14 20:00:31,528 - soko_yetu_ai - INFO - Successfully loaded environment variables from: C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\.env
+2025-05-14 20:00:31,533 - soko_yetu_ai - INFO - Attempting to connect to database with URL: postgresql://footprints:UaE1PGbew8vu3lV7sN01Fw@poorer-heron-10708.j77.aws-eu-central-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full
+2025-05-14 20:00:32,285 - soko_yetu_ai - INFO - Price data preprocessed and saved to data/processed/price_data.csv
+2025-05-14 20:00:35,617 - soko_yetu_ai - ERROR - Price data preprocessing failed: Could not determine version from string 'CockroachDB CCL v25.1.4 (x86_64-pc-linux-gnu, built 2025/04/08 19:16:05, go1.22.8 X:nocoverageredesign)'
+Traceback (most recent call last):
+  File "C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\scripts\preprocess_data.py", line 111, in preprocess_price_data
+    df.to_sql('processed_price_data', self.engine, if_exists='replace', index=False)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\sql.py", line 841, in to_sql
+    with pandasSQL_builder(con, schema=schema, need_transaction=True) as pandas_sql:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\sql.py", line 906, in pandasSQL_builder
+    return SQLDatabase(con, schema, need_transaction)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\sql.py", line 1636, in __init__
+    con = self.exit_stack.enter_context(con.connect())
+                                        ^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 675, in __init__
+    self.__connect()
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 915, in __connect
+    )._exec_w_sync_on_first_run(self.dbapi_connection, self)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\event\attr.py", line 483, in _exec_w_sync_on_first_run
+    self(*args, **kw)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\event\attr.py", line 497, in __call__
+    fn(*args, **kw)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1916, in go
+    return once_fn(*arg, **kw)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\create.py", line 752, in first_connect
+    dialect.initialize(c)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\postgresql\psycopg2.py", line 683, in initialize
+    super().initialize(connection)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\postgresql\base.py", line 3182, in initialize
+    super().initialize(connection)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 523, in initialize
+    self.server_version_info = self._get_server_version_info(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\postgresql\base.py", line 3457, in _get_server_version_info
+    raise AssertionError(
+AssertionError: Could not determine version from string 'CockroachDB CCL v25.1.4 (x86_64-pc-linux-gnu, built 2025/04/08 19:16:05, go1.22.8 X:nocoverageredesign)'
+2025-05-14 20:02:49,071 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-14 20:02:49,074 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-14 20:02:49,076 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-14 20:21:39,486 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-14 20:21:39,489 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-14 20:21:39,491 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-14 20:31:05,500 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-14 20:31:05,504 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-14 20:31:05,507 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-14 20:31:53,625 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-14 20:31:53,628 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-14 20:31:53,629 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-15 12:24:16,644 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-15 12:24:16,646 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-15 12:24:16,647 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-15 12:43:38,925 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-15 12:43:38,927 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-15 12:43:38,928 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-15 12:44:10,929 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-15 12:44:10,931 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-15 12:44:10,932 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-15 12:45:03,756 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-15 12:45:03,757 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-15 12:45:03,758 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-15 12:45:24,469 - soko_yetu_ai - INFO - Successfully loaded environment variables from: C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\.env
+2025-05-15 12:45:24,470 - soko_yetu_ai - INFO - Attempting to connect to database with URL: cockroachdb://footprints:UaE1PGbew8vu3lV7sN01Fw@poorer-heron-10708.j77.aws-eu-central-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full
+2025-05-15 12:45:25,413 - soko_yetu_ai - INFO - Price data preprocessed and saved to data/processed/price_data.csv
+2025-05-15 12:45:29,288 - soko_yetu_ai - INFO - Price data saved to database
+2025-05-15 12:45:29,343 - soko_yetu_ai - INFO - Yield data preprocessed and saved to data/processed/yield_data.csv
+2025-05-15 12:45:30,837 - soko_yetu_ai - INFO - Yield data saved to database
+2025-05-15 12:45:31,104 - soko_yetu_ai - INFO - Image data preprocessed for crop and saved to data/processed/plantvillage
+2025-05-15 12:45:32,707 - soko_yetu_ai - INFO - crop image metadata saved to database
+2025-05-15 12:45:32,709 - soko_yetu_ai - ERROR - Image data preprocessing failed: [WinError 3] The system cannot find the path specified: 'data/raw/produce_grading'
+Traceback (most recent call last):
+  File "C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\scripts\preprocess_data.py", line 157, in preprocess_image_data
+    class_dirs = [d for d in os.listdir(raw_dir) if os.path.isdir(os.path.join(raw_dir, d))]
+                             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'data/raw/produce_grading'
+2025-05-15 12:50:38,339 - soko_yetu_ai - INFO - Successfully loaded environment variables from: C:\Users\USER\Videos\AgirConnect-AI\soko-yetu-ai-ml\.env
+2025-05-15 12:50:38,340 - soko_yetu_ai - INFO - Attempting to connect to database with URL: cockroachdb://footprints:UaE1PGbew8vu3lV7sN01Fw@poorer-heron-10708.j77.aws-eu-central-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full
+2025-05-15 12:50:39,029 - soko_yetu_ai - INFO - Price data preprocessed and saved to data/processed/price_data.csv
+2025-05-15 12:50:46,691 - soko_yetu_ai - INFO - Price data saved to database
+2025-05-15 12:50:46,706 - soko_yetu_ai - INFO - Yield data preprocessed and saved to data/processed/yield_data.csv
+2025-05-15 12:50:51,955 - soko_yetu_ai - INFO - Yield data saved to database
+2025-05-15 12:50:51,956 - soko_yetu_ai - INFO - Processing crop training images from: data\raw\plantvillage\train
+2025-05-15 12:52:41,003 - soko_yetu_ai - INFO - Image data preprocessed for crop_train and saved to data\processed\plantvillage
+2025-05-15 12:52:42,949 - soko_yetu_ai - INFO - crop_train image metadata saved to database
+2025-05-15 12:52:42,950 - soko_yetu_ai - INFO - Processing crop testing images from: data\raw\plantvillage\test
+2025-05-15 12:54:41,630 - soko_yetu_ai - INFO - Image data preprocessed for crop_test and saved to data\processed\plantvillage
+2025-05-15 12:54:44,096 - soko_yetu_ai - INFO - crop_test image metadata saved to database
+2025-05-15 12:54:44,097 - soko_yetu_ai - WARNING - Raw image directory for produce grading not found, skipping: data\raw\produce_grading
+2025-05-15 13:10:04,456 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-15 13:10:04,458 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-15 13:10:04,459 - soko_yetu_ai - INFO - Loaded 0 test images
+2025-05-15 13:10:33,068 - soko_yetu_ai - INFO - Loaded 0 training images
+2025-05-15 13:10:33,070 - soko_yetu_ai - INFO - Loaded 0 validation images
+2025-05-15 13:10:33,071 - soko_yetu_ai - INFO - Loaded 0 test images

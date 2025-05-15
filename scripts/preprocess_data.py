@@ -205,18 +205,44 @@ if __name__ == "__main__":
         output_path="data/processed/yield_data.csv"
     )
     
-    # Preprocess crop analysis images
-    preprocessor.preprocess_image_data(
-        raw_dir="data/raw/plantvillage",
-        output_dir="data/processed/plantvillage",
-        target_size=(256, 256),
-        dataset_type="crop"
-    )
+    # --- Preprocess crop analysis images ---
+    plantvillage_raw_base = Path("data/raw/plantvillage")
+    plantvillage_processed_base = Path("data/processed/plantvillage")
+
+    # Process 'train' images if the directory exists
+    train_raw_dir = plantvillage_raw_base / "train"
+    if train_raw_dir.is_dir():
+        logger.info(f"Processing crop training images from: {train_raw_dir}")
+        preprocessor.preprocess_image_data(
+            raw_dir=str(train_raw_dir),
+            output_dir=str(plantvillage_processed_base), # Output classes will be under this dir
+            target_size=(256, 256),
+            dataset_type="crop_train" # Creates metadata table processed_crop_train_image_metadata
+        )
+    else:
+        logger.warning(f"Raw image directory for crop training not found, skipping: {train_raw_dir}")
+
+    # Process 'test' images if the directory exists
+    test_raw_dir = plantvillage_raw_base / "test"
+    if test_raw_dir.is_dir():
+        logger.info(f"Processing crop testing images from: {test_raw_dir}")
+        preprocessor.preprocess_image_data(
+            raw_dir=str(test_raw_dir),
+            output_dir=str(plantvillage_processed_base), # Output classes will be under this dir
+            target_size=(256, 256),
+            dataset_type="crop_test" # Creates metadata table processed_crop_test_image_metadata
+        )
+    else:
+        logger.warning(f"Raw image directory for crop testing not found, skipping: {test_raw_dir}")
     
     # Preprocess produce grading images
-    preprocessor.preprocess_image_data(
-        raw_dir="data/raw/produce_grading",
-        output_dir="data/processed/produce_grading",
-        target_size=(512, 512),
-        dataset_type="produce"
-    )
+    produce_grading_raw_dir = Path("data/raw/produce_grading")
+    if produce_grading_raw_dir.is_dir():
+        preprocessor.preprocess_image_data(
+            raw_dir=str(produce_grading_raw_dir),
+            output_dir="data/processed/produce_grading",
+            target_size=(512, 512),
+            dataset_type="produce"
+        )
+    else:
+        logger.warning(f"Raw image directory for produce grading not found, skipping: {produce_grading_raw_dir}")
